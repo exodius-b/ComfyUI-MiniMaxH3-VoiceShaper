@@ -1,0 +1,21 @@
+[project]
+name = "comfyui-minimaxh3-voiceshaper"
+description = "Interactive voice tone, timbre, acoustic quality shaper and instant DSP audio previewer for MiniMax H3 workflows in ComfyUI."
+version = "1.0.0"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "edge-tts>=6.1.12",
+    "requests>=2.31.0",
+    "av",
+    "numpy",
+]
+
+[project.urls]
+Repository = "https://github.com/exodius-b/ComfyUI-MiniMaxH3-VoiceShaper"
+
+[tool.comfy]
+PublisherId = "exodius-b"
+DisplayName = "ComfyUI MiniMax H3 Voice Shaper & Previewer"
+Icon = ""

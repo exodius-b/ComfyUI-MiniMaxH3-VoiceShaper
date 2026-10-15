@@ -1,0 +1,326 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MiniMaxH3VoiceShaper",
+      "title": "Speaker 1 (S1) - Weathered Detective",
+      "pos": [
+        380,
+        80
+      ],
+      "size": [
+        410,
+        680
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "h3_dialogue_block",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "voice_profile_only",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "soundscape_acoustic_hint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "voice_params",
+          "type": "H3_VOICE_PARAMS",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3VoiceShaper"
+      },
+      "widgets_values": [
+        "S1",
+        "The detective",
+        "middle-aged man",
+        "English",
+        "General American",
+        "Somber / Melancholic",
+        -0.5,
+        0.4,
+        0.6,
+        0.2,
+        -0.2,
+        -0.2,
+        0.6,
+        0.8,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        "We have been looking for this file for three years.",
+        "None"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "MiniMaxH3VoiceShaper",
+      "title": "Speaker 2 (S2) - Urgent Informant",
+      "pos": [
+        380,
+        820
+      ],
+      "size": [
+        410,
+        680
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "h3_dialogue_block",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "voice_profile_only",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "soundscape_acoustic_hint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "voice_params",
+          "type": "H3_VOICE_PARAMS",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3VoiceShaper"
+      },
+      "widgets_values": [
+        "S2",
+        "The informant",
+        "young woman",
+        "English",
+        "Received Pronunciation (British)",
+        "Urgent / Tense",
+        0.2,
+        -0.1,
+        0.0,
+        0.4,
+        0.3,
+        -0.3,
+        0.8,
+        0.8,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        "Then you know why we cannot stay here another minute.",
+        "None"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "MiniMaxH3VoicePreviewer",
+      "title": "Preview Speaker 1 (S1)",
+      "pos": [
+        860,
+        140
+      ],
+      "size": [
+        460,
+        250
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "voice_params",
+          "type": "H3_VOICE_PARAMS",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "preview_audio",
+          "type": "AUDIO",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3VoicePreviewer"
+      },
+      "widgets_values": [
+        "Local Instant (Edge-TTS + PyTorch Acoustic DSP)",
+        "",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 4,
+      "type": "PreviewAudio",
+      "title": "S1 Audio Player",
+      "pos": [
+        1370,
+        140
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "MiniMaxH3VoicePreviewer",
+      "title": "Preview Speaker 2 (S2)",
+      "pos": [
+        860,
+        880
+      ],
+      "size": [
+        460,
+        250
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "voice_params",
+          "type": "H3_VOICE_PARAMS",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "preview_audio",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3VoicePreviewer"
+      },
+      "widgets_values": [
+        "Local Instant (Edge-TTS + PyTorch Acoustic DSP)",
+        "",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "PreviewAudio",
+      "title": "S2 Audio Player",
+      "pos": [
+        1370,
+        880
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      3,
+      3,
+      0,
+      "H3_VOICE_PARAMS"
+    ],
+    [
+      2,
+      3,
+      0,
+      4,
+      0,
+      "AUDIO"
+    ],
+    [
+      3,
+      2,
+      3,
+      5,
+      0,
+      "H3_VOICE_PARAMS"
+    ],
+    [
+      4,
+      5,
+      0,
+      6,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.75,
+      "offset": [
+        100,
+        40
+      ]
+    }
+  },
+  "version": 0.4
+}

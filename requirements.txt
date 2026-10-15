@@ -1,0 +1,4 @@
+edge-tts>=6.1.12
+requests>=2.31.0
+av
+numpy

@@ -1,0 +1,193 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MiniMaxH3VoiceShaper",
+      "pos": [
+        420,
+        140
+      ],
+      "size": [
+        410,
+        680
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "h3_dialogue_block",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "voice_profile_only",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "soundscape_acoustic_hint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "voice_params",
+          "type": "H3_VOICE_PARAMS",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3VoiceShaper"
+      },
+      "widgets_values": [
+        "S1",
+        "The speaker",
+        "young woman",
+        "English",
+        "Neutral / Unspecified",
+        "Warm / Friendly",
+        0.0,
+        0.3,
+        0.1,
+        0.2,
+        0.0,
+        0.0,
+        0.6,
+        0.8,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        "I get off at the next station.",
+        "None"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "MiniMaxH3VoicePreviewer",
+      "pos": [
+        880,
+        140
+      ],
+      "size": [
+        480,
+        260
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "voice_params",
+          "type": "H3_VOICE_PARAMS",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "preview_audio",
+          "type": "AUDIO",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3VoicePreviewer"
+      },
+      "widgets_values": [
+        "Local Instant (Edge-TTS + PyTorch Acoustic DSP)",
+        "",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PreviewAudio",
+      "pos": [
+        1410,
+        140
+      ],
+      "size": [
+        280,
+        90
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "Note",
+      "pos": [
+        880,
+        450
+      ],
+      "size": [
+        480,
+        210
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "HOW TO USE THIS WORKFLOW:\n\n1. Adjust the sliders and toggles on 'MiniMax H3 Voice Tone & Quality Shaper' (left).\n   - Hover over any slider or toggle to read its tooltip.\n2. Click 'Queue Prompt' (Ctrl+Enter) to hear the voice immediately in 'PreviewAudio' (right).\n3. Once satisfied, connect 'h3_dialogue_block' and 'soundscape_acoustic_hint' into your MiniMax H3 video generation prompt."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      3,
+      2,
+      0,
+      "H3_VOICE_PARAMS"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9,
+      "offset": [
+        100,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}
